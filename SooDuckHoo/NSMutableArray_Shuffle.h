@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+// 배열에 섞기 기능을 추가하기 위한 카테고리
 @interface NSMutableArray (Shuffle)
 - (void)shuffle;
 @end
