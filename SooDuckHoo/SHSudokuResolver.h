@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * 스도쿠 문제 생성 및 풀이를 제공하는 서비스
+ */
 @interface SHSudokuResolver : NSObject
 
 + (SHSudokuResolver*) resolverWithPuzzle:(NSArray*) puzzle;
