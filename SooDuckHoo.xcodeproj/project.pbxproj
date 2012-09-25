@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F0A882A61611A0ED005EB951 /* SHDocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */; };
+		F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A882AC1611A437005EB951 /* SHAppDelegate.m */; };
+		F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B4029F1611908500CB7FB5 /* Cocoa.framework */; };
+		F0B402AA1611908600CB7FB5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0B402A81611908600CB7FB5 /* InfoPlist.strings */; };
+		F0B402B01611908600CB7FB5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F0B402AE1611908600CB7FB5 /* Credits.rtf */; };
+		F0B402B61611908600CB7FB5 /* SHDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B402B41611908600CB7FB5 /* SHDocument.xib */; };
+		F0B402B91611908600CB7FB5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0B402B71611908600CB7FB5 /* MainMenu.xib */; };
+		F0B402E016119A0D00CB7FB5 /* SHSudokuResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402C7161190F100CB7FB5 /* SHSudokuResolver.m */; };
+		F0B402E216119A0D00CB7FB5 /* SHSearchSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402C9161190F100CB7FB5 /* SHSearchSequence.m */; };
+		F0B402E416119A0D00CB7FB5 /* SHSudokuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402C3161190E200CB7FB5 /* SHSudokuView.m */; };
+		F0B402E616119A0D00CB7FB5 /* NSMutableArray_Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402C5161190E200CB7FB5 /* NSMutableArray_Shuffle.m */; };
+		F0B402E816119A0D00CB7FB5 /* SHDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402B21611908600CB7FB5 /* SHDocument.m */; };
+		F0B402E916119A0D00CB7FB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402AB1611908600CB7FB5 /* main.m */; };
+		F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F516119C0200CB7FB5 /* SHGame.m */; };
+		F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F0A882AB1611A437005EB951 /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
+		F0A882AC1611A437005EB951 /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
+		F0B4029B1611908500CB7FB5 /* SooDuckHoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooDuckHoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0B4029F1611908500CB7FB5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F0B402A21611908500CB7FB5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F0B402A31611908500CB7FB5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F0B402A41611908500CB7FB5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F0B402A71611908600CB7FB5 /* SooDuckHoo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SooDuckHoo-Info.plist"; sourceTree = "<group>"; };
+		F0B402A91611908600CB7FB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F0B402AB1611908600CB7FB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0B402AD1611908600CB7FB5 /* SooDuckHoo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SooDuckHoo-Prefix.pch"; sourceTree = "<group>"; };
+		F0B402AF1611908600CB7FB5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F0B402B11611908600CB7FB5 /* SHDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHDocument.h; sourceTree = "<group>"; };
+		F0B402B21611908600CB7FB5 /* SHDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHDocument.m; sourceTree = "<group>"; };
+		F0B402BB1611908600CB7FB5 /* SHDocument.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SHDocument.xcdatamodel; sourceTree = "<group>"; };
+		F0B402C2161190E200CB7FB5 /* SHSudokuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSudokuView.h; sourceTree = "<group>"; };
+		F0B402C3161190E200CB7FB5 /* SHSudokuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSudokuView.m; sourceTree = "<group>"; };
+		F0B402C4161190E200CB7FB5 /* NSMutableArray_Shuffle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffle.h; sourceTree = "<group>"; };
+		F0B402C5161190E200CB7FB5 /* NSMutableArray_Shuffle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffle.m; sourceTree = "<group>"; };
+		F0B402C6161190F100CB7FB5 /* SHSudokuResolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSudokuResolver.h; sourceTree = "<group>"; };
+		F0B402C7161190F100CB7FB5 /* SHSudokuResolver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSudokuResolver.m; sourceTree = "<group>"; };
+		F0B402C8161190F100CB7FB5 /* SHSearchSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHSearchSequence.h; sourceTree = "<group>"; };
+		F0B402C9161190F100CB7FB5 /* SHSearchSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSearchSequence.m; sourceTree = "<group>"; };
+		F0B402D91611936600CB7FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SHDocument.xib; sourceTree = "<group>"; };
+		F0B402DA1611936600CB7FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F0B402F416119C0200CB7FB5 /* SHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGame.h; sourceTree = "<group>"; };
+		F0B402F516119C0200CB7FB5 /* SHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGame.m; sourceTree = "<group>"; };
+		F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCell.h; sourceTree = "<group>"; };
+		F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0B402981611908500CB7FB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0B402901611908500CB7FB5 = {
+			isa = PBXGroup;
+			children = (
+				F0B402A51611908500CB7FB5 /* SooDuckHoo */,
+				F0B4029E1611908500CB7FB5 /* Frameworks */,
+				F0B4029C1611908500CB7FB5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0B4029C1611908500CB7FB5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0B4029B1611908500CB7FB5 /* SooDuckHoo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0B4029E1611908500CB7FB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0B4029F1611908500CB7FB5 /* Cocoa.framework */,
+				F0B402A11611908500CB7FB5 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0B402A11611908500CB7FB5 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402A21611908500CB7FB5 /* AppKit.framework */,
+				F0B402A31611908500CB7FB5 /* CoreData.framework */,
+				F0B402A41611908500CB7FB5 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F0B402A51611908500CB7FB5 /* SooDuckHoo */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402ED16119B1A00CB7FB5 /* logic */,
+				F0B402EC16119AFD00CB7FB5 /* ui */,
+				F0B402EB16119AEB00CB7FB5 /* extensions */,
+				F0B402D01611918C00CB7FB5 /* model */,
+				F0B402B41611908600CB7FB5 /* SHDocument.xib */,
+				F0B402B71611908600CB7FB5 /* MainMenu.xib */,
+				F0B402A61611908600CB7FB5 /* Supporting Files */,
+				F0A882AB1611A437005EB951 /* SHAppDelegate.h */,
+				F0A882AC1611A437005EB951 /* SHAppDelegate.m */,
+			);
+			path = SooDuckHoo;
+			sourceTree = "<group>";
+		};
+		F0B402A61611908600CB7FB5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402A71611908600CB7FB5 /* SooDuckHoo-Info.plist */,
+				F0B402A81611908600CB7FB5 /* InfoPlist.strings */,
+				F0B402AB1611908600CB7FB5 /* main.m */,
+				F0B402AD1611908600CB7FB5 /* SooDuckHoo-Prefix.pch */,
+				F0B402AE1611908600CB7FB5 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0B402D01611918C00CB7FB5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402B11611908600CB7FB5 /* SHDocument.h */,
+				F0B402B21611908600CB7FB5 /* SHDocument.m */,
+				F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */,
+				F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */,
+				F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */,
+				F0B402F416119C0200CB7FB5 /* SHGame.h */,
+				F0B402F516119C0200CB7FB5 /* SHGame.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		F0B402EB16119AEB00CB7FB5 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402C4161190E200CB7FB5 /* NSMutableArray_Shuffle.h */,
+				F0B402C5161190E200CB7FB5 /* NSMutableArray_Shuffle.m */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		F0B402EC16119AFD00CB7FB5 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402C2161190E200CB7FB5 /* SHSudokuView.h */,
+				F0B402C3161190E200CB7FB5 /* SHSudokuView.m */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		F0B402ED16119B1A00CB7FB5 /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				F0B402C6161190F100CB7FB5 /* SHSudokuResolver.h */,
+				F0B402C7161190F100CB7FB5 /* SHSudokuResolver.m */,
+				F0B402C8161190F100CB7FB5 /* SHSearchSequence.h */,
+				F0B402C9161190F100CB7FB5 /* SHSearchSequence.m */,
+			);
+			name = logic;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0B4029A1611908500CB7FB5 /* SooDuckHoo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0B402BF1611908600CB7FB5 /* Build configuration list for PBXNativeTarget "SooDuckHoo" */;
+			buildPhases = (
+				F0B402971611908500CB7FB5 /* Sources */,
+				F0B402981611908500CB7FB5 /* Frameworks */,
+				F0B402991611908500CB7FB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SooDuckHoo;
+			productName = SooDuckHoo;
+			productReference = F0B4029B1611908500CB7FB5 /* SooDuckHoo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0B402921611908500CB7FB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SH;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "이지율";
+			};
+			buildConfigurationList = F0B402951611908500CB7FB5 /* Build configuration list for PBXProject "SooDuckHoo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0B402901611908500CB7FB5;
+			productRefGroup = F0B4029C1611908500CB7FB5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0B4029A1611908500CB7FB5 /* SooDuckHoo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0B402991611908500CB7FB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0B402AA1611908600CB7FB5 /* InfoPlist.strings in Resources */,
+				F0B402B01611908600CB7FB5 /* Credits.rtf in Resources */,
+				F0B402B61611908600CB7FB5 /* SHDocument.xib in Resources */,
+				F0B402B91611908600CB7FB5 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0B402971611908500CB7FB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A882A61611A0ED005EB951 /* SHDocument.xcdatamodeld in Sources */,
+				F0B402E016119A0D00CB7FB5 /* SHSudokuResolver.m in Sources */,
+				F0B402E216119A0D00CB7FB5 /* SHSearchSequence.m in Sources */,
+				F0B402E416119A0D00CB7FB5 /* SHSudokuView.m in Sources */,
+				F0B402E616119A0D00CB7FB5 /* NSMutableArray_Shuffle.m in Sources */,
+				F0B402E816119A0D00CB7FB5 /* SHDocument.m in Sources */,
+				F0B402E916119A0D00CB7FB5 /* main.m in Sources */,
+				F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */,
+				F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */,
+				F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F0B402A81611908600CB7FB5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B402A91611908600CB7FB5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F0B402AE1611908600CB7FB5 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B402AF1611908600CB7FB5 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F0B402B41611908600CB7FB5 /* SHDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B402D91611936600CB7FB5 /* Base */,
+			);
+			name = SHDocument.xib;
+			sourceTree = "<group>";
+		};
+		F0B402B71611908600CB7FB5 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B402DA1611936600CB7FB5 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0B402BD1611908600CB7FB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F0B402BE1611908600CB7FB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F0B402C01611908600CB7FB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SooDuckHoo/SooDuckHoo-Prefix.pch";
+				INFOPLIST_FILE = "SooDuckHoo/SooDuckHoo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F0B402C11611908600CB7FB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SooDuckHoo/SooDuckHoo-Prefix.pch";
+				INFOPLIST_FILE = "SooDuckHoo/SooDuckHoo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0B402951611908500CB7FB5 /* Build configuration list for PBXProject "SooDuckHoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B402BD1611908600CB7FB5 /* Debug */,
+				F0B402BE1611908600CB7FB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0B402BF1611908600CB7FB5 /* Build configuration list for PBXNativeTarget "SooDuckHoo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0B402C01611908600CB7FB5 /* Debug */,
+				F0B402C11611908600CB7FB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F0B402BB1611908600CB7FB5 /* SHDocument.xcdatamodel */,
+			);
+			currentVersion = F0B402BB1611908600CB7FB5 /* SHDocument.xcdatamodel */;
+			path = SHDocument.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F0B402921611908500CB7FB5 /* Project object */;
+}
