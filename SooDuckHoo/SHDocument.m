@@ -9,6 +9,7 @@
 #import "SHDocument.h"
 #import "SHGame.h"
 #import "SHSudokuCell.h"
+#import "SHSudokuResolver.h"
 
 @implementation SHDocument
 @synthesize sudokuView = _sudokuView;
@@ -37,6 +38,8 @@
     NSLog(@"닙 로드 완료");
     [self.sudokuView setGame: [self ensureGame]];
     NSLog(@"게임 확보후 지정");
+    
+    [[aController window] setAcceptsMouseMovedEvents: YES];
 }
 
 + (BOOL)autosavesInPlace
@@ -75,12 +78,15 @@
     game = [NSEntityDescription insertNewObjectForEntityForName:@"Game"
                                                  inManagedObjectContext: self.managedObjectContext];
     
+    SHSudokuResolver* resolver = [SHSudokuResolver new];
+    int* puzzle = [resolver resolve];
+    
     for(int i=0; i<81; i++){
         SHSudokuCell* cell = [NSEntityDescription insertNewObjectForEntityForName:@"SudokuCell"
                                                            inManagedObjectContext:self.managedObjectContext];
         
         [game.cells addObject: cell];
-        cell.value = [NSNumber numberWithInt:i];
+        cell.value = [NSNumber numberWithInt:puzzle[i]];
     }
     
     // 모델을 싱크하고 언두 매니저를 다시 켠다.

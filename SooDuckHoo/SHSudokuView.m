@@ -58,6 +58,17 @@
     self.needsDisplay = YES;
 }
 
+-(void)mouseMoved:(NSEvent *)theEvent
+{
+    NSPoint currentLocation = [self convertPoint:theEvent.locationInWindow fromView:nil];
+    SHSudokuCellItem* item = [self cellItemWithPoint: currentLocation];
+
+    if(self.hotItem != item){
+        self.hotItem = item;
+        self.needsDisplay = YES;
+    }
+}
+
 -(void)keyDown:(NSEvent *)theEvent
 {
     int number = [theEvent.characters intValue];
@@ -82,11 +93,8 @@
     while(each = [iter nextObject])
     {
         [gc saveGraphicsState];
-        if(self.selection == each){
-            [each drawItemWithSelection:YES highlighted:NO];
-        }else{
-            [each drawItemWithSelection:NO highlighted:NO];
-        }
+        [each drawItemWithSelection:each == self.selection
+                        highlighted:each == self.hotItem];
         [gc restoreGraphicsState];
     }
 }
@@ -154,6 +162,7 @@
         }
         cellItem.model = cellModel;
     }
+    self.needsDisplay = YES;
 }
 
 -(void)setGame:(SHGame *)game

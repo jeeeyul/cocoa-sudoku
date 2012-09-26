@@ -41,11 +41,20 @@
    
     [[NSBezierPath bezierPathWithRoundedRect:self.bounds xRadius:5 yRadius:5]setClip];
     
-    if(!selected){
-        [[NSColor colorWithCalibratedHue:0 saturation:0 brightness:0.8 alpha:1]set];
-    }else{
+    
+    if(selected){
         [[NSColor colorWithCalibratedHue:0.5 saturation:0.5 brightness:0.8 alpha:1]set];
     }
+    
+    else if(highlighted){
+        [[NSColor colorWithCalibratedHue:0.5 saturation:0.5 brightness:0.8 alpha:0.5]set];
+    }
+    
+    else{
+        [[NSColor colorWithCalibratedHue:0 saturation:0 brightness:0.8 alpha:1]set];
+    }
+    
+    
     [NSBezierPath fillRect: self.bounds];
    
     NSRect expanded = NSMakeRect(self.bounds.origin.x - 10, self.bounds.origin.y - 10, self.bounds.size.width + 20, self.bounds.size.height + 20);

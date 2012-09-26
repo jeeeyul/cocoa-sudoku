@@ -16,11 +16,13 @@
 
 }
 
-@property(setter = setGame:) SHGame* game;
+@property SHGame* game;
+
 @property int margin;
 @property int cellSpacing;
 @property int areaSpacing;
 
 @property SHSudokuCellItem* selection;
+@property SHSudokuCellItem* hotItem;
 
 @end
