@@ -53,7 +53,10 @@
     self.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
 }
 
-
+-(void)mouseDown:(NSEvent *)theEvent
+{
+    NSLog(@"%@", theEvent);
+}
 
 -(void)drawRect:(NSRect)dirtyRect
 {
@@ -94,9 +97,7 @@
         SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
         eachItem.bounds = bounds;
     }
-    
-    CALayer* layer = self.superview.layer;
-    NSLog(@"%@", layer.contents);
+  
 }
 
 -(void) viewWillDraw
