@@ -202,6 +202,7 @@
 							<string key="NSFrame">{{20, 20}, {467, 373}}</string>
 							<reference key="NSSuperview" ref="568628114"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SHSudokuView</string>
@@ -213,7 +214,7 @@
 					<reference key="NSNextKeyView" ref="866278681"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMinSize">{94, 164}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
@@ -231,6 +232,14 @@
 						<reference key="destination" ref="275939982"/>
 					</object>
 					<int key="connectionID">18</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">sudokuView</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="866278681"/>
+					</object>
+					<int key="connectionID">100051</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -261,7 +270,7 @@
 						<int key="objectID">-2</int>
 						<reference key="object" ref="512844837"/>
 						<reference key="parent" ref="0"/>
-						<string key="objectName">File's Owner</string>
+						<string key="objectName">Document</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">-1</int>
@@ -451,7 +460,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100050</int>
+			<int key="maxID">100051</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -466,6 +475,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SHDocument</string>
 					<string key="superclassName">NSPersistentDocument</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">sudokuView</string>
+						<string key="NS.object.0">SHSudokuView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">sudokuView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">sudokuView</string>
+							<string key="candidateClassName">SHSudokuView</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/SHDocument.h</string>
@@ -474,17 +494,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">SHSudokuView</string>
 					<string key="superclassName">NSView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">document</string>
-						<string key="NS.object.0">SHDocument</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">document</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">document</string>
-							<string key="candidateClassName">SHDocument</string>
-						</object>
-					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/SHSudokuView.h</string>

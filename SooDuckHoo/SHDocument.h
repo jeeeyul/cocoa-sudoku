@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SHSudokuView.h"
 
 @interface SHDocument : NSPersistentDocument
+
+@property IBOutlet SHSudokuView* sudokuView;
+
 
 @end

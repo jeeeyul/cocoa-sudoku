@@ -8,12 +8,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SooDuckHoo/SHSudokuView.m"
-         timestampString = "370343521.41024"
+         timestampString = "370356687.367613"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "70"
-         endingLineNumber = "70"
+         startingLineNumber = "58"
+         endingLineNumber = "58"
          landmarkName = "-drawRect:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SooDuckHoo/SHSudokuView.m"
+         timestampString = "370356772.173372"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "110"
+         endingLineNumber = "110"
+         landmarkName = "-setGame:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SooDuckHoo/SHDocument.m"
+         timestampString = "370356602.399808"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "-windowControllerDidLoadNib:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

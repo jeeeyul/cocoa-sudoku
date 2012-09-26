@@ -8,14 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SHGame.h"
-#import "SHDocument.h"
+
 @interface SHSudokuView : NSView
 {
 
 }
 
-@property SHGame* game;
-@property IBOutlet SHDocument* document;
+@property(setter = setGame:) SHGame* game;
 @property int margin;
 @property int cellSpacing;
 @property int areaSpacing;

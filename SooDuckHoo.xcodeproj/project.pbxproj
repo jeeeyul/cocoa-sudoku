@@ -142,8 +142,6 @@
 		F0B402D01611918C00CB7FB5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				F0B402B11611908600CB7FB5 /* SHDocument.h */,
-				F0B402B21611908600CB7FB5 /* SHDocument.m */,
 				F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */,
 				F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */,
 				F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */,
@@ -165,6 +163,8 @@
 		F0B402EC16119AFD00CB7FB5 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				F0B402B11611908600CB7FB5 /* SHDocument.h */,
+				F0B402B21611908600CB7FB5 /* SHDocument.m */,
 				F0B402C2161190E200CB7FB5 /* SHSudokuView.h */,
 				F0B402C3161190E200CB7FB5 /* SHSudokuView.m */,
 				F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */,

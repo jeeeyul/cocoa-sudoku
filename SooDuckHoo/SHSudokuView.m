@@ -13,10 +13,9 @@
 @implementation SHSudokuView
 {
     NSMutableArray* fCells;
+    SHGame* fGame;
 }
 
-@synthesize game = fGame;
-@synthesize document = fDocument;
 @synthesize cellSpacing = fCellSpacing;
 @synthesize margin = fMargin;
 @synthesize areaSpacing = fAreaSpacing;
@@ -36,22 +35,11 @@
         {
             [fCells addObject: [SHSudokuCellItem cellItemWithParent:self]];
         }
-        
-        [self setupLayer];
     }
     return self;
 
 }
 
--(void) setupLayer
-{
-    self.layer.cornerRadius = 10.0;
-    self.layer.borderWidth = 1.0f;
-    self.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
-    self.layer.shadowOpacity = 1.5f;
-    self.layer.shadowRadius = 2.5f;
-    self.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-}
 
 -(void)mouseDown:(NSEvent *)theEvent
 {
@@ -62,7 +50,7 @@
 {
     if([self inLiveResize])
     {
-        [self layout];
+        [self layoutItems];
     }
     
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
@@ -77,7 +65,13 @@
     }
 }
 
--(void) layout
+-(void)layout
+{
+    [super layout];
+    [self layoutItems];
+}
+
+-(void) layoutItems
 {
     NSRect bounds = self.bounds;
     CGFloat boxWidth = (bounds.size.width - fMargin * 2.0 - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
@@ -97,59 +91,38 @@
         SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
         eachItem.bounds = bounds;
     }
-  
 }
 
--(void) viewWillDraw
+-(void)assignModelToCellItems
 {
-    if(self.game == nil)
-    {
-        [self ensureGame];
+    for(int i=0; i<81; i++){
+        SHSudokuCellItem* cellItem = [fCells objectAtIndex: i];
+        SHSudokuCell* cellModel = nil;
+        if(fGame != nil){
+            cellModel = [fGame.cells objectAtIndex: i];
+        }
+        cellItem.model = cellModel;
     }
 }
 
--(void) ensureGame
+-(void)setGame:(SHGame *)game
 {
-    NSEntityDescription* entity = [NSEntityDescription entityForName:@"Game"
-                                              inManagedObjectContext:fDocument.managedObjectContext];
-    // 먼저 문서에 게임이 포함되어 있는지 확인한다.
-    NSFetchRequest* fr = [NSFetchRequest new];
-    fr.entity = entity;
-    
-    NSError* error;
-    NSArray* result = [fDocument.managedObjectContext executeFetchRequest: fr
-                                                                    error: &error];
-    if(result != nil && [result count] > 0){
-        fGame = [result objectAtIndex: 0];
-        NSLog(@"게임을 로드하였습니다.");
+    if(fGame == game)
+    {
         return;
     }
     
+    [self willChangeValueForKey:@"game"];
+    fGame = game;
+    [self assignModelToCellItems];
     
-    // 새로운 게임의 작성, 언두매니저를 잠시 중단 시킨다.
-    [[fDocument managedObjectContext] processPendingChanges];
-    [[fDocument undoManager]disableUndoRegistration];
-    
-    SHGame* game = [NSEntityDescription insertNewObjectForEntityForName:@"Game"
-                                                 inManagedObjectContext: fDocument.managedObjectContext];
-   
-    for(int i=0; i<81; i++){
-        SHSudokuCell* cell = [NSEntityDescription insertNewObjectForEntityForName:@"SudokuCell"
-                                                           inManagedObjectContext:fDocument.managedObjectContext];
-
-        [game.cells addObject: cell];
-        cell.value = [NSNumber numberWithInt:i];
-        
-        
-        SHSudokuCellItem* cellUI = [fCells objectAtIndex: i];
-        cellUI.model = cell;
-    }
-    
-    // 모델을 싱크하고 언두 매니저를 다시 켠다.
-    [[fDocument managedObjectContext]processPendingChanges];
-    [[fDocument undoManager]enableUndoRegistration];
-    NSLog(@"새 게임을 작성하였습니다.");
-    self.game = game;
+    [self didChangeValueForKey:@"game"];
 }
+
+-(SHGame*) game
+{
+    return fGame;
+}
+
 
 @end
