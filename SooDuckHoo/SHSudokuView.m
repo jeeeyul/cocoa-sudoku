@@ -19,6 +19,7 @@
 @synthesize document = fDocument;
 @synthesize cellSpacing = fCellSpacing;
 @synthesize margin = fMargin;
+@synthesize areaSpacing = fAreaSpacing;
 
 -(id)initWithFrame:(NSRect)frameRect
 {
@@ -26,16 +27,30 @@
     if(self)
     {
         fMargin = 5;
-        fCellSpacing = 5;
+        fCellSpacing = 10;
+        fAreaSpacing = 10;
         
         fCells = [NSMutableArray new];
         
-        for(int i=0; i<81; i++){
+        for(int i=0; i<81; i++)
+        {
             [fCells addObject: [SHSudokuCellItem cellItemWithParent:self]];
         }
+        
+        [self setupLayer];
     }
     return self;
 
+}
+
+-(void) setupLayer
+{
+    self.layer.cornerRadius = 10.0;
+    self.layer.borderWidth = 1.0f;
+    self.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    self.layer.shadowOpacity = 1.5f;
+    self.layer.shadowRadius = 2.5f;
+    self.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
 }
 
 
@@ -62,8 +77,8 @@
 -(void) layout
 {
     NSRect bounds = self.bounds;
-    CGFloat boxWidth = (bounds.size.width - fMargin * 2.0 - fCellSpacing * 8.0) / 9.0;
-    CGFloat boxHeight = (bounds.size.height - fMargin * 2.0 - fCellSpacing * 8.0) / 9.0;
+    CGFloat boxWidth = (bounds.size.width - fMargin * 2.0 - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
+    CGFloat boxHeight = (bounds.size.height - fMargin * 2.0 - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
     
     for(int i=0; i<81; i++)
     {
@@ -72,15 +87,16 @@
         
         NSRect bounds = NSMakeRect(col * boxWidth + fMargin, row * boxHeight + fMargin, boxWidth, boxHeight);
 
-        bounds.origin.y += fCellSpacing * row;
-        bounds.origin.x += fCellSpacing * col;
+        bounds.origin.y += fCellSpacing * row + (row / 3) * fAreaSpacing;
+        bounds.origin.x += fCellSpacing * col + (col / 3) * fAreaSpacing;
        
         
         SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
         eachItem.bounds = bounds;
     }
     
-    NSLog(@"레이아웃");
+    CALayer* layer = self.superview.layer;
+    NSLog(@"%@", layer.contents);
 }
 
 -(void) viewWillDraw

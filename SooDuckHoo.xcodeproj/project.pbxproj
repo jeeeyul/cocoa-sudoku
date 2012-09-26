@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1881B1612F1A700565224 /* CoreGraphics.framework */; };
 		F0A882A61611A0ED005EB951 /* SHDocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */; };
 		F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A882AC1611A437005EB951 /* SHAppDelegate.m */; };
 		F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B4029F1611908500CB7FB5 /* Cocoa.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0A1881B1612F1A700565224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0A882AB1611A437005EB951 /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
 		F0A882AC1611A437005EB951 /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
 		F0B4029B1611908500CB7FB5 /* SooDuckHoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooDuckHoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */,
 				F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,7 @@
 		F0B402901611908500CB7FB5 = {
 			isa = PBXGroup;
 			children = (
+				F0A1881B1612F1A700565224 /* CoreGraphics.framework */,
 				F0B402A51611908500CB7FB5 /* SooDuckHoo */,
 				F0B4029E1611908500CB7FB5 /* Frameworks */,
 				F0B4029C1611908500CB7FB5 /* Products */,

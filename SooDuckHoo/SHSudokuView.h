@@ -18,6 +18,7 @@
 @property IBOutlet SHDocument* document;
 @property int margin;
 @property int cellSpacing;
+@property int areaSpacing;
 
 @property SHSudokuCell* selection;
 
