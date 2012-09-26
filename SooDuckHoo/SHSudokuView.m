@@ -20,6 +20,7 @@
 @synthesize margin = fMargin;
 @synthesize areaSpacing = fAreaSpacing;
 
+#pragma mark - 초기화
 -(id)initWithFrame:(NSRect)frameRect
 {
     self = [super initWithFrame:frameRect];
@@ -41,11 +42,32 @@
 }
 
 
--(void)mouseDown:(NSEvent *)theEvent
+# pragma mark - UI 핸들링
+-(BOOL)acceptsFirstResponder
 {
-    NSLog(@"%@", theEvent);
+    return YES;
 }
 
+-(void)mouseDown:(NSEvent *)theEvent
+{
+    NSPoint currentLocation = [self convertPoint:theEvent.locationInWindow fromView:nil];
+
+    SHSudokuCellItem* item = [self cellItemWithPoint: currentLocation];
+ 
+    self.selection = item;
+    self.needsDisplay = YES;
+}
+
+-(void)keyDown:(NSEvent *)theEvent
+{
+    int number = [theEvent.characters intValue];
+    if(number != 0 && self.selection != nil){
+        self.selection.model.value = [NSNumber numberWithInt: number];
+        self.needsDisplay = YES;
+    }
+}
+
+# pragma mark - 랜더링 관련
 -(void)drawRect:(NSRect)dirtyRect
 {
     if([self inLiveResize])
@@ -60,7 +82,11 @@
     while(each = [iter nextObject])
     {
         [gc saveGraphicsState];
-        [each drawItem];
+        if(self.selection == each){
+            [each drawItemWithSelection:YES highlighted:NO];
+        }else{
+            [each drawItemWithSelection:NO highlighted:NO];
+        }
         [gc restoreGraphicsState];
     }
 }
@@ -93,6 +119,31 @@
     }
 }
 
+#pragma mark - Service APIs:
+
+/**
+ * 주어진 지점에 포함된 셀 아이템을 얻습니다.
+ */
+-(SHSudokuCellItem*) cellItemWithPoint:(NSPoint) point
+{
+    NSEnumerator* iter = [fCells objectEnumerator];
+    SHSudokuCellItem* each = nil;
+    
+    while(each = [iter nextObject])
+    {
+        bool isContained = each.bounds.origin.x <= point.x && point.x <= each.bounds.origin.x + each.bounds.size.width && each.bounds.origin.y <= point.y && point.y <= each.bounds.origin.y + each.bounds.size.height;
+        
+        if(isContained)
+        {
+            return each;
+        }
+    }
+    
+    return nil;
+}
+
+
+#pragma mark - 모델 액세스
 -(void)assignModelToCellItems
 {
     for(int i=0; i<81; i++){

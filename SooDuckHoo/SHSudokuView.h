@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "SHGame.h"
 
+@class SHSudokuCellItem;
+
 @interface SHSudokuView : NSView
 {
 
@@ -19,6 +21,6 @@
 @property int cellSpacing;
 @property int areaSpacing;
 
-@property SHSudokuCell* selection;
+@property SHSudokuCellItem* selection;
 
 @end

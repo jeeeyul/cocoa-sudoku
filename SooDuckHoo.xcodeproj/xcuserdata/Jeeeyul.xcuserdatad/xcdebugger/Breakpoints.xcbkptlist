@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SooDuckHoo/SHSudokuView.m"
-         timestampString = "370356687.367613"
+         timestampString = "370360059.16974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "58"
-         endingLineNumber = "58"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
          landmarkName = "-drawRect:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "SooDuckHoo/SHSudokuView.m"
-         timestampString = "370356772.173372"
+         timestampString = "370360059.16974"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
+         startingLineNumber = "161"
+         endingLineNumber = "161"
          landmarkName = "-setGame:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -40,6 +40,32 @@
          startingLineNumber = "38"
          endingLineNumber = "38"
          landmarkName = "-windowControllerDidLoadNib:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SooDuckHoo/SHSudokuView.m"
+         timestampString = "370360059.16974"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
+         landmarkName = "-drawRect:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "SooDuckHoo/SHSudokuCellItem.m"
+         timestampString = "370358531.457259"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-drawBackgroundWithSelection:withHighlight:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

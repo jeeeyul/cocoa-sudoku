@@ -16,6 +16,6 @@
 @property SHSudokuCell* model;
 
 +(SHSudokuCellItem*) cellItemWithParent: (SHSudokuView*) parent;
--(void) drawItem;
+-(void) drawItemWithSelection:(bool) selected highlighted:(bool) highlighted;
 
 @end

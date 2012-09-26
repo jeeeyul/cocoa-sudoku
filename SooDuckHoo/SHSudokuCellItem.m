@@ -31,7 +31,8 @@
 
 #pragma mark 랜더링
 
--(void)drawBackground
+-(void)drawBackgroundWithSelection:(bool) selected
+                     withHighlight:(bool) highlighted
 {
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
     
@@ -40,7 +41,11 @@
    
     [[NSBezierPath bezierPathWithRoundedRect:self.bounds xRadius:5 yRadius:5]setClip];
     
-    [[NSColor colorWithCalibratedHue:0 saturation:0 brightness:0.8 alpha:1]set];
+    if(!selected){
+        [[NSColor colorWithCalibratedHue:0 saturation:0 brightness:0.8 alpha:1]set];
+    }else{
+        [[NSColor colorWithCalibratedHue:0.5 saturation:0.5 brightness:0.8 alpha:1]set];
+    }
     [NSBezierPath fillRect: self.bounds];
    
     NSRect expanded = NSMakeRect(self.bounds.origin.x - 10, self.bounds.origin.y - 10, self.bounds.size.width + 20, self.bounds.size.height + 20);
@@ -80,7 +85,8 @@
     [gc restoreGraphicsState];
 }
 
--(void) drawForeground
+-(void) drawForegroundWithSelection:(bool) selected
+                      withHighlight:(bool) highlighted
 {
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
     
@@ -101,10 +107,11 @@
 
 }
 
--(void)drawItem
+-(void)drawItemWithSelection:(bool)selected
+                 highlighted:(bool)highlighted
 {
-    [self drawBackground];
-    [self drawForeground];
+    [self drawBackgroundWithSelection:selected withHighlight:highlighted];
+    [self drawForegroundWithSelection:selected withHighlight:highlighted];
 }
 
 @end
