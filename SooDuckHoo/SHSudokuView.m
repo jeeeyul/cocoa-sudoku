@@ -10,8 +10,23 @@
 #import "SHGame.h"
 
 @implementation SHSudokuView
+{
+    NSMutableArray* fCells;
+}
+
 @synthesize game = fGame;
 @synthesize document = fDocument;
+
+
+-(id)init
+{
+    self = [super init];
+    if(self){
+        fCells = [NSMutableArray new];
+    }
+    return self;
+}
+
 
 -(void)drawRect:(NSRect)dirtyRect
 {
@@ -38,6 +53,12 @@
     [path stroke];
     
     [gc restoreGraphicsState];
+    
+    NSEnumerator* iter = [fCells objectEnumerator];
+    SHSudokuCell* each = nil;
+    while(each = [iter nextObject]){
+        
+    }
 }
 
 -(void)viewWillDraw

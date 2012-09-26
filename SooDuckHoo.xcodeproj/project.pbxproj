@@ -22,6 +22,7 @@
 		F0B402E916119A0D00CB7FB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402AB1611908600CB7FB5 /* main.m */; };
 		F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F516119C0200CB7FB5 /* SHGame.m */; };
 		F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */; };
+		F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		F0B402F516119C0200CB7FB5 /* SHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGame.m; sourceTree = "<group>"; };
 		F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCell.h; sourceTree = "<group>"; };
 		F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCell.m; sourceTree = "<group>"; };
+		F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCellItem.h; sourceTree = "<group>"; };
+		F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCellItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 			children = (
 				F0B402C2161190E200CB7FB5 /* SHSudokuView.h */,
 				F0B402C3161190E200CB7FB5 /* SHSudokuView.m */,
+				F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */,
+				F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */,
 				F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */,
 				F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */,
+				F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

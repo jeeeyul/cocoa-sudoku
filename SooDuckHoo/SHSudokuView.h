@@ -17,4 +17,6 @@
 @property SHGame* game;
 @property IBOutlet SHDocument* document;
 
+@property SHSudokuCell* selection;
+
 @end
