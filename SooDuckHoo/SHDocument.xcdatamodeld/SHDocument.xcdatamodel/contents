@@ -12,6 +12,6 @@
     </entity>
     <elements>
         <element name="Game" positionX="160" positionY="192" width="128" height="68"/>
-        <element name="SudokuCell" positionX="160" positionY="192" width="128" height="128"/>
+        <element name="SudokuCell" positionX="-279" positionY="313" width="128" height="128"/>
     </elements>
 </model>

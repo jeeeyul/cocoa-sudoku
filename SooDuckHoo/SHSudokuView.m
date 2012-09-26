@@ -8,6 +8,7 @@
 
 #import "SHSudokuView.h"
 #import "SHGame.h"
+#import "SHSudokuCellItem.h"
 
 @implementation SHSudokuView
 {
@@ -23,6 +24,10 @@
     self = [super init];
     if(self){
         fCells = [NSMutableArray new];
+        
+        for(int i=0; i<81; i++){
+            [fCells addObject: [SHSudokuCellItem cellItemWithParent:self]];
+        }
     }
     return self;
 }
@@ -55,13 +60,20 @@
     [gc restoreGraphicsState];
     
     NSEnumerator* iter = [fCells objectEnumerator];
-    SHSudokuCell* each = nil;
+    SHSudokuCellItem* each = nil;
     while(each = [iter nextObject]){
-        
+        [gc saveGraphicsState];
+        [each drawItem];
+        [gc restoreGraphicsState];
     }
 }
 
--(void)viewWillDraw
+-(void) layout
+{
+    
+}
+
+-(void) viewWillDraw
 {
     if(self.game == nil){
         [self ensureGame];

@@ -15,7 +15,7 @@
 @property NSRect bounds;
 @property SHSudokuCell* model;
 
-
++(SHSudokuCellItem*) cellItemWithParent: (SHSudokuView*) parent;
 -(void) drawItem;
 
 @end
