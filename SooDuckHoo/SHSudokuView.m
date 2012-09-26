@@ -17,12 +17,17 @@
 
 @synthesize game = fGame;
 @synthesize document = fDocument;
+@synthesize cellSpacing = fCellSpacing;
+@synthesize margin = fMargin;
 
-
--(id)init
+-(id)initWithFrame:(NSRect)frameRect
 {
-    self = [super init];
-    if(self){
+    self = [super initWithFrame:frameRect];
+    if(self)
+    {
+        fMargin = 5;
+        fCellSpacing = 5;
+        
         fCells = [NSMutableArray new];
         
         for(int i=0; i<81; i++){
@@ -30,38 +35,24 @@
         }
     }
     return self;
+
 }
+
 
 
 -(void)drawRect:(NSRect)dirtyRect
 {
+    if([self inLiveResize])
+    {
+        [self layout];
+    }
+    
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
-    
-    [gc saveGraphicsState];
-    
-    [[NSColor blueColor] set];
-    
-    NSRect bounds = [self bounds];
-    
-    
-    
-    NSShadow* shadow = [NSShadow new];
-    shadow.shadowOffset = NSMakeSize(5.0, -5.0);
-    shadow.shadowBlurRadius = 10.0;
-    [shadow set];
-    
-    NSBezierPath* path = [NSBezierPath new];
-    path.lineWidth = 2.0;
-    [path appendBezierPathWithRoundedRect:bounds
-                                  xRadius:10.0
-                                  yRadius:10.0];
-    [path stroke];
-    
-    [gc restoreGraphicsState];
-    
+        
     NSEnumerator* iter = [fCells objectEnumerator];
     SHSudokuCellItem* each = nil;
-    while(each = [iter nextObject]){
+    while(each = [iter nextObject])
+    {
         [gc saveGraphicsState];
         [each drawItem];
         [gc restoreGraphicsState];
@@ -70,12 +61,32 @@
 
 -(void) layout
 {
+    NSRect bounds = self.bounds;
+    CGFloat boxWidth = (bounds.size.width - fMargin * 2.0 - fCellSpacing * 8.0) / 9.0;
+    CGFloat boxHeight = (bounds.size.height - fMargin * 2.0 - fCellSpacing * 8.0) / 9.0;
     
+    for(int i=0; i<81; i++)
+    {
+        int row = i / 9;
+        int col = i % 9;
+        
+        NSRect bounds = NSMakeRect(col * boxWidth + fMargin, row * boxHeight + fMargin, boxWidth, boxHeight);
+
+        bounds.origin.y += fCellSpacing * row;
+        bounds.origin.x += fCellSpacing * col;
+       
+        
+        SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
+        eachItem.bounds = bounds;
+    }
+    
+    NSLog(@"레이아웃");
 }
 
 -(void) viewWillDraw
 {
-    if(self.game == nil){
+    if(self.game == nil)
+    {
         [self ensureGame];
     }
 }
@@ -110,6 +121,11 @@
                                                            inManagedObjectContext:fDocument.managedObjectContext];
 
         [game.cells addObject: cell];
+        cell.value = [NSNumber numberWithInt:i];
+        
+        
+        SHSudokuCellItem* cellUI = [fCells objectAtIndex: i];
+        cellUI.model = cell;
     }
     
     // 모델을 싱크하고 언두 매니저를 다시 켠다.

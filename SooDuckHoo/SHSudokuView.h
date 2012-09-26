@@ -16,6 +16,8 @@
 
 @property SHGame* game;
 @property IBOutlet SHDocument* document;
+@property int margin;
+@property int cellSpacing;
 
 @property SHSudokuCell* selection;
 
