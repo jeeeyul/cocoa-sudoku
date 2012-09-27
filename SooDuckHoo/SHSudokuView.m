@@ -27,9 +27,9 @@
     self = [super initWithFrame:frameRect];
     if(self)
     {
-        fMargin = 5;
-        fCellSpacing = 10;
-        fAreaSpacing = 10;
+        fMargin = 20;
+        fCellSpacing = 5;
+        fAreaSpacing = 5;
         
         fCells = [NSMutableArray new];
         
@@ -71,10 +71,76 @@
 
 -(void)keyDown:(NSEvent *)theEvent
 {
+    
     printf("%d\n", theEvent.keyCode);
-    int number = [theEvent.characters intValue];
-    if(number != 0 && self.selection != nil){
-        self.selection.model.value = [NSNumber numberWithInt: number];
+    switch(theEvent.keyCode)
+    {
+        // LEFT
+        case 123:
+            if(self.selection != nil){
+                int index = (int)[fCells indexOfObject: self.selection];
+                int row = index / 9;
+                int col = index % 9;
+                if(col > 0){
+                    col -= 1;
+                    self.selection = [fCells objectAtIndex: row * 9 + col];
+                    self.needsDisplay = YES;
+                }
+            }
+            break;
+ 
+        
+        // RIGHT
+        case 124:
+            if(self.selection != nil){
+                int index = (int)[fCells indexOfObject: self.selection];
+                int row = index / 9;
+                int col = index % 9;
+                if(col < 8){
+                    col += 1;
+                    self.selection = [fCells objectAtIndex: row * 9 + col];
+                    self.needsDisplay = YES;
+                }
+            }
+            
+            break;
+            
+        // DOWN
+        case 125:
+            if(self.selection != nil){
+                int index = (int)[fCells indexOfObject: self.selection];
+                int row = index / 9;
+                int col = index % 9;
+                if(row > 0){
+                    row -= 1;
+                    self.selection = [fCells objectAtIndex: row * 9 + col];
+                    self.needsDisplay = YES;
+                }
+            }
+            break;
+       
+        // UP
+        case 126:
+             if(self.selection != nil){
+                int index = (int)[fCells indexOfObject: self.selection];
+                int row = index / 9;
+                int col = index % 9;
+                if(row < 8){
+                    row += 1;
+                    self.selection = [fCells objectAtIndex: row * 9 + col];
+                    self.needsDisplay = YES;
+                }
+            }
+            break;
+
+            
+        default:
+        {
+            int number = [theEvent.characters intValue];
+            if(number != 0 && self.selection != nil){
+                self.selection.model.value = [NSNumber numberWithInt: number];
+            }
+        }
     }
 }
 
@@ -105,21 +171,37 @@
 -(void) layoutItems
 {
     NSRect bounds = self.bounds;
-    CGFloat boxWidth = (bounds.size.width - fMargin * 2.0 - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
-    CGFloat boxHeight = (bounds.size.height - fMargin * 2.0 - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
+    bounds.size.width -= fMargin * 2;
+    bounds.size.height -= fMargin * 2;
+    bounds.origin.x += fMargin;
+    bounds.origin.y += fMargin;
+    
+    if(bounds.size.width > bounds.size.height){
+        int delta = bounds.size.width - bounds.size.height;
+        bounds.origin.x += delta / 2;
+        bounds.size.width = bounds.size.height;
+    }
+    else{
+        int delta = bounds.size.height - bounds.size.width;
+        bounds.origin.y += delta / 2;
+        bounds.size.height = bounds.size.width;
+    }
+    
+    CGFloat boxWidth = (bounds.size.width - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
+    CGFloat boxHeight = (bounds.size.height - fCellSpacing * 8.0 - fAreaSpacing * 2) / 9.0;
     
     for(int i=0; i<81; i++)
     {
         int row = i / 9;
         int col = i % 9;
         
-        NSRect bounds = NSMakeRect(col * boxWidth + fMargin, row * boxHeight + fMargin, boxWidth, boxHeight);
+        NSRect eachBounds = NSMakeRect(col * boxWidth + bounds.origin.x , row * boxHeight + bounds.origin.y, boxWidth, boxHeight);
 
-        bounds.origin.y += fCellSpacing * row + (row / 3) * fAreaSpacing;
-        bounds.origin.x += fCellSpacing * col + (col / 3) * fAreaSpacing;
+        eachBounds.origin.y += fCellSpacing * row + (row / 3) * fAreaSpacing;
+        eachBounds.origin.x += fCellSpacing * col + (col / 3) * fAreaSpacing;
         
         SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
-        eachItem.bounds = bounds;
+        eachItem.bounds = eachBounds;
     }
 }
 
