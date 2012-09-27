@@ -12,4 +12,6 @@
 
 @property IBOutlet NSApplication* app;
 
+-(IBAction)newGame:(id)sender;
+
 @end

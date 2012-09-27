@@ -18,4 +18,10 @@
     }
 }
 
+-(void)newGame:(id)sender
+{
+    [[NSDocumentController sharedDocumentController]openUntitledDocumentAndDisplay:YES error: nil];
+    NSLog(@"새 도큐먼트 작성");
+}
+
 @end
