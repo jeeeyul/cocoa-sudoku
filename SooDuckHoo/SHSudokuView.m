@@ -53,7 +53,6 @@
     NSPoint currentLocation = [self convertPoint:theEvent.locationInWindow fromView:nil];
 
     SHSudokuCellItem* item = [self cellItemWithPoint: currentLocation];
- 
     self.selection = item;
     self.needsDisplay = YES;
 }
@@ -74,18 +73,12 @@
     int number = [theEvent.characters intValue];
     if(number != 0 && self.selection != nil){
         self.selection.model.value = [NSNumber numberWithInt: number];
-        self.needsDisplay = YES;
     }
 }
 
 # pragma mark - 랜더링 관련
 -(void)drawRect:(NSRect)dirtyRect
 {
-    if([self inLiveResize])
-    {
-        [self layoutItems];
-    }
-    
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
         
     NSEnumerator* iter = [fCells objectEnumerator];
@@ -99,9 +92,8 @@
     }
 }
 
--(void)layout
+-(void)viewWillDraw
 {
-    [super layout];
     [self layoutItems];
 }
 
@@ -150,6 +142,11 @@
     return nil;
 }
 
+-(void) handleModelChanged: (NSNotification*) notification
+{
+    NSLog(@"모델 수정됨");
+}
+
 
 #pragma mark - 모델 액세스
 -(void)assignModelToCellItems
@@ -167,6 +164,7 @@
 
 -(void)setGame:(SHGame *)game
 {
+    
     if(fGame == game)
     {
         return;
@@ -175,7 +173,7 @@
     [self willChangeValueForKey:@"game"];
     fGame = game;
     [self assignModelToCellItems];
-    
+
     [self didChangeValueForKey:@"game"];
 }
 

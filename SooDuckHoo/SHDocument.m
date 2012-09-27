@@ -40,6 +40,16 @@
     NSLog(@"게임 확보후 지정");
     
     [[aController window] setAcceptsMouseMovedEvents: YES];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(modelChanged:)
+                                                 name:NSManagedObjectContextObjectsDidChangeNotification
+                                               object:self.managedObjectContext];
+}
+
+-(void) modelChanged: (NSNotification*) noti
+{
+    self.sudokuView.needsDisplay = YES;
 }
 
 + (BOOL)autosavesInPlace
