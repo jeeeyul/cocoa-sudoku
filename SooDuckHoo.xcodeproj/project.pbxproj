@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHCellRenderingOptions.h; sourceTree = "<group>"; };
 		F0A1881B1612F1A700565224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0A882AB1611A437005EB951 /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
 		F0A882AC1611A437005EB951 /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 				F0B402C3161190E200CB7FB5 /* SHSudokuView.m */,
 				F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */,
 				F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */,
+				F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */,
 			);
 			name = ui;
 			sourceTree = "<group>";

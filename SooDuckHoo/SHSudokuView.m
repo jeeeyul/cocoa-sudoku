@@ -9,6 +9,7 @@
 #import "SHSudokuView.h"
 #import "SHGame.h"
 #import "SHSudokuCellItem.h"
+#import "SHCellRenderingOptions.h"
 
 @implementation SHSudokuView
 {
@@ -70,6 +71,7 @@
 
 -(void)keyDown:(NSEvent *)theEvent
 {
+    printf("%d\n", theEvent.keyCode);
     int number = [theEvent.characters intValue];
     if(number != 0 && self.selection != nil){
         self.selection.model.value = [NSNumber numberWithInt: number];
@@ -86,8 +88,11 @@
     while(each = [iter nextObject])
     {
         [gc saveGraphicsState];
-        [each drawItemWithSelection:each == self.selection
-                        highlighted:each == self.hotItem];
+        SHCellRenderingOptions options;
+        options.selected = self.selection == each;
+        options.highlighted = self.hotItem == each;
+        
+        [each drawItemWithOptions: options];
         [gc restoreGraphicsState];
     }
 }
@@ -112,7 +117,6 @@
 
         bounds.origin.y += fCellSpacing * row + (row / 3) * fAreaSpacing;
         bounds.origin.x += fCellSpacing * col + (col / 3) * fAreaSpacing;
-       
         
         SHSudokuCellItem* eachItem = [fCells objectAtIndex: i];
         eachItem.bounds = bounds;

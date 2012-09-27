@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SHSudokuCell.h"
 #import "SHSudokuView.h"
+#import "SHCellRenderingOptions.h"
 @interface SHSudokuCellItem : NSObject
 
 @property SHSudokuView* parent;
@@ -16,6 +17,6 @@
 @property SHSudokuCell* model;
 
 +(SHSudokuCellItem*) cellItemWithParent: (SHSudokuView*) parent;
--(void) drawItemWithSelection:(bool) selected highlighted:(bool) highlighted;
+-(void) drawItemWithOptions:(SHCellRenderingOptions) options;
 
 @end
