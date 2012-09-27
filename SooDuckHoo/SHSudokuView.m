@@ -75,6 +75,15 @@
     printf("%d\n", theEvent.keyCode);
     switch(theEvent.keyCode)
     {
+        // Delete
+        case 51:
+        case 117:
+            if(self.selection != nil){
+                self.selection.model.value = 0;
+            }
+            
+            break;
+            
         // LEFT
         case 123:
             if(self.selection != nil){

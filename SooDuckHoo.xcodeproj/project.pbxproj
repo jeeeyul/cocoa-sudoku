@@ -78,7 +78,6 @@
 		F0B402901611908500CB7FB5 = {
 			isa = PBXGroup;
 			children = (
-				F0A1881B1612F1A700565224 /* CoreGraphics.framework */,
 				F0B402A51611908500CB7FB5 /* SooDuckHoo */,
 				F0B4029E1611908500CB7FB5 /* Frameworks */,
 				F0B4029C1611908500CB7FB5 /* Products */,
@@ -96,6 +95,7 @@
 		F0B4029E1611908500CB7FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0A1881B1612F1A700565224 /* CoreGraphics.framework */,
 				F0B4029F1611908500CB7FB5 /* Cocoa.framework */,
 				F0B402A11611908500CB7FB5 /* Other Frameworks */,
 			);
