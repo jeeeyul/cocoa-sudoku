@@ -37,6 +37,8 @@
         {
             [fCells addObject: [SHSudokuCellItem cellItemWithParent:self]];
         }
+        
+        self.wantsLayer = YES;
     }
     return self;
 

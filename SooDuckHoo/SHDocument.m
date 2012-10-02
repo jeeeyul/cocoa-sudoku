@@ -34,17 +34,30 @@
 {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    
-    NSLog(@"닙 로드 완료");
-    [self.sudokuView setGame: [self ensureGame]];
-    NSLog(@"게임 확보후 지정");
-    
     [[aController window] setAcceptsMouseMovedEvents: YES];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(modelChanged:)
                                                  name:NSManagedObjectContextObjectsDidChangeNotification
                                                object:self.managedObjectContext];
+    
+    [[[NSThread alloc]initWithTarget:self selector:@selector(prepareGame) object:nil] start];
+}
+
+/**
+ * 게임을 준비한다, 별도의 독립 스레드에서 수행된다.
+ */
+-(void) prepareGame
+{
+    NSLog(@"닙 로드 완료");
+    SHGame* game = [self ensureGame];
+    NSLog(@"게임 확보후 지정");
+    
+    /*
+     * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
+     */
+    NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self.sudokuView selector:@selector(setGame:) object:game];
+    [[NSOperationQueue mainQueue]addOperation: op];
 }
 
 -(void) modelChanged: (NSNotification*) noti
