@@ -41,9 +41,7 @@
         self.wantsLayer = YES;
     }
     return self;
-
 }
-
 
 # pragma mark - UI 핸들링
 -(BOOL)acceptsFirstResponder
@@ -78,6 +76,7 @@
     switch(theEvent.keyCode)
     {
         // Delete
+        case 49:
         case 51:
         case 117:
             if(self.selection != nil){

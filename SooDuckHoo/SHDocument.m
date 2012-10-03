@@ -44,6 +44,8 @@
     [[[NSThread alloc]initWithTarget:self selector:@selector(prepareGame) object:nil] start];
 }
 
+
+
 /**
  * 게임을 준비한다, 별도의 독립 스레드에서 수행된다.
  */
