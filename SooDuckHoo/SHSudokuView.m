@@ -10,16 +10,19 @@
 #import "SHGame.h"
 #import "SHSudokuCellItem.h"
 #import "SHCellRenderingOptions.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SHSudokuView
 {
     NSMutableArray* fCells;
     SHGame* fGame;
+    bool fVisible;
 }
 
 @synthesize cellSpacing = fCellSpacing;
 @synthesize margin = fMargin;
 @synthesize areaSpacing = fAreaSpacing;
+
 
 #pragma mark - 초기화
 -(id)initWithFrame:(NSRect)frameRect
@@ -30,6 +33,7 @@
         fMargin = 20;
         fCellSpacing = 5;
         fAreaSpacing = 5;
+        fVisible = NO;
         
         fCells = [NSMutableArray new];
         
@@ -51,6 +55,10 @@
 
 -(void)mouseDown:(NSEvent *)theEvent
 {
+    if(!self.visible){
+        return;
+    }
+    
     NSPoint currentLocation = [self convertPoint:theEvent.locationInWindow fromView:nil];
 
     SHSudokuCellItem* item = [self cellItemWithPoint: currentLocation];
@@ -60,6 +68,10 @@
 
 -(void)mouseMoved:(NSEvent *)theEvent
 {
+    if(!self.visible){
+        return;
+    }
+    
     NSPoint currentLocation = [self convertPoint:theEvent.locationInWindow fromView:nil];
     SHSudokuCellItem* item = [self cellItemWithPoint: currentLocation];
 
@@ -71,6 +83,9 @@
 
 -(void)keyDown:(NSEvent *)theEvent
 {
+    if(!self.visible){
+        return;
+    }
     
     printf("%d\n", theEvent.keyCode);
     switch(theEvent.keyCode)
@@ -155,8 +170,47 @@
 }
 
 # pragma mark - 랜더링 관련
+-(void)setVisible:(bool)visible
+{
+    if(fVisible == visible){
+        return;
+    }
+    [self willChangeValueForKey:@"visible"];
+    fVisible = visible;
+    self.needsDisplay = YES;
+    [self didChangeValueForKey:@"visible"];
+    
+    if(fVisible){
+        [self initializeLayer];
+        
+        CABasicAnimation* ani = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+        ani.duration = 0.5f;
+        ani.autoreverses = NO;
+        ani.fromValue = [NSNumber numberWithFloat: M_PI_2];
+        ani.toValue = [NSNumber numberWithFloat:0.0f];
+        ani.repeatCount = 1;
+        [self.layer addAnimation: ani forKey:@"myRotation"];
+    }
+}
+
+-(bool)visible
+{
+    return fVisible;
+}
+
+-(CATransform3D) defaultTransform
+{
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = 1.0 / -2000;
+    return transform;
+}
+
 -(void)drawRect:(NSRect)dirtyRect
 {
+    if(!self.visible){
+        return;
+    }
+    
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
         
     NSEnumerator* iter = [fCells objectEnumerator];
@@ -258,6 +312,13 @@
     self.needsDisplay = YES;
 }
 
+-(void)initializeLayer
+{
+    self.layer.transform = [self defaultTransform];
+    self.layer.anchorPoint = NSMakePoint(0.5, 0.5);
+    self.layer.position = CGPointMake(self.bounds.origin.x + self.bounds.size.width / 2.0 , self.bounds.origin.y + self.bounds.size.height / 2.0);
+}
+
 -(void)setGame:(SHGame *)game
 {
     
@@ -269,9 +330,12 @@
     [self willChangeValueForKey:@"game"];
     fGame = game;
     [self assignModelToCellItems];
-
     [self didChangeValueForKey:@"game"];
+    
+    self.visible = YES;
+    
 }
+
 
 -(SHGame*) game
 {

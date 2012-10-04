@@ -10,6 +10,7 @@
 #import "SHGame.h"
 #import "SHSudokuCell.h"
 #import "SHSudokuResolver.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation SHDocument
 @synthesize sudokuView = _sudokuView;
@@ -51,15 +52,25 @@
  */
 -(void) prepareGame
 {
-    NSLog(@"닙 로드 완료");
+    [CATransaction begin];
+    [CATransaction setDisableActions: YES];
+    
+    [self.indicator startAnimation: self];
+    NSLog(@"SHDoc - 닙 로드 완료");
     SHGame* game = [self ensureGame];
-    NSLog(@"게임 확보후 지정");
+    NSLog(@"SHDoc - 게임 확보후 지정");
     
     /*
      * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
      */
     NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self.sudokuView selector:@selector(setGame:) object:game];
     [[NSOperationQueue mainQueue]addOperation: op];
+    
+    [self.indicator stopAnimation: self];
+    
+
+
+    [CATransaction commit];
 }
 
 -(void) modelChanged: (NSNotification*) noti
@@ -91,7 +102,7 @@
                                                                error: &error];
     if(result != nil && [result count] > 0){
         game = [result objectAtIndex: 0];
-        NSLog(@"게임을 로드하였습니다.");
+        NSLog(@"SHDoc - 게임을 로드하였습니다.");
         return game;
     }
     
@@ -117,7 +128,7 @@
     // 모델을 싱크하고 언두 매니저를 다시 켠다.
     [[self managedObjectContext]processPendingChanges];
     [[self undoManager]enableUndoRegistration];
-    NSLog(@"새 게임을 작성하였습니다.");
+    NSLog(@"SHDoc - 새 게임을 작성하였습니다.");
     
     return game;
 }

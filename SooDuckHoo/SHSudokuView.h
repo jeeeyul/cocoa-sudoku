@@ -21,6 +21,7 @@
 @property int margin;
 @property int cellSpacing;
 @property int areaSpacing;
+@property bool visible;
 
 @property SHSudokuCellItem* selection;
 @property SHSudokuCellItem* hotItem;

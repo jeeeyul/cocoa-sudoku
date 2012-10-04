@@ -12,6 +12,7 @@
 @interface SHDocument : NSPersistentDocument
 
 @property IBOutlet SHSudokuView* sudokuView;
+@property IBOutlet NSProgressIndicator* indicator;
 
 
 @end

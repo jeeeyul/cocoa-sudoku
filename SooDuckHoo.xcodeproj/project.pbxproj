@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1881B1612F1A700565224 /* CoreGraphics.framework */; };
+		F0A31D7F161D1F240065EB6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A31D7E161D1F240065EB6B /* QuartzCore.framework */; };
+		F0A31D8A161D5B440065EB6B /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F0A31D89161D5B440065EB6B /* icon.icns */; };
 		F0A882A61611A0ED005EB951 /* SHDocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */; };
 		F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0A882AC1611A437005EB951 /* SHAppDelegate.m */; };
 		F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B4029F1611908500CB7FB5 /* Cocoa.framework */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHCellRenderingOptions.h; sourceTree = "<group>"; };
 		F0A1881B1612F1A700565224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F0A31D7E161D1F240065EB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F0A31D89161D5B440065EB6B /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
 		F0A882AB1611A437005EB951 /* SHAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHAppDelegate.h; sourceTree = "<group>"; };
 		F0A882AC1611A437005EB951 /* SHAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHAppDelegate.m; sourceTree = "<group>"; };
 		F0B4029B1611908500CB7FB5 /* SooDuckHoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooDuckHoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A31D7F161D1F240065EB6B /* QuartzCore.framework in Frameworks */,
 				F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */,
 				F0B402A01611908500CB7FB5 /* Cocoa.framework in Frameworks */,
 			);
@@ -78,6 +83,7 @@
 		F0B402901611908500CB7FB5 = {
 			isa = PBXGroup;
 			children = (
+				F0A31D89161D5B440065EB6B /* icon.icns */,
 				F0B402A51611908500CB7FB5 /* SooDuckHoo */,
 				F0B4029E1611908500CB7FB5 /* Frameworks */,
 				F0B4029C1611908500CB7FB5 /* Products */,
@@ -95,6 +101,7 @@
 		F0B4029E1611908500CB7FB5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0A31D7E161D1F240065EB6B /* QuartzCore.framework */,
 				F0A1881B1612F1A700565224 /* CoreGraphics.framework */,
 				F0B4029F1611908500CB7FB5 /* Cocoa.framework */,
 				F0B402A11611908500CB7FB5 /* Other Frameworks */,
@@ -243,6 +250,7 @@
 				F0B402B01611908600CB7FB5 /* Credits.rtf in Resources */,
 				F0B402B61611908600CB7FB5 /* SHDocument.xib in Resources */,
 				F0B402B91611908600CB7FB5 /* MainMenu.xib in Resources */,
+				F0A31D8A161D5B440065EB6B /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
