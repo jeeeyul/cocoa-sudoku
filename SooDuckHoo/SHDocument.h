@@ -13,6 +13,7 @@
 
 @property IBOutlet SHSudokuView* sudokuView;
 @property IBOutlet NSProgressIndicator* indicator;
+@property IBOutlet NSWindow* difficultyWindow;
 
 
 @end

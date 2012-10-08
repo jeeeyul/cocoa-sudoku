@@ -14,6 +14,7 @@
 
 @implementation SHDocument
 @synthesize sudokuView = _sudokuView;
+@synthesize difficultyWindow = _difficultyWindow;
 
 - (id)init
 {
@@ -131,6 +132,16 @@
     NSLog(@"SHDoc - 새 게임을 작성하였습니다.");
     
     return game;
+}
+
+-(void)showDifficultySheet
+{
+    if(_difficultyWindow == nil){
+        [NSBundle loadNibNamed:@"SHDifficultyChooser.xib" owner:self];
+        // 닙로드
+    }
+    
+    //시트 보여주기
 }
 
 @end
