@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F06E9AAC1622CAC8007EA2A4 /* SHDifficultyChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */; };
 		F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1881B1612F1A700565224 /* CoreGraphics.framework */; };
 		F0A31D7F161D1F240065EB6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A31D7E161D1F240065EB6B /* QuartzCore.framework */; };
 		F0A31D8A161D5B440065EB6B /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F0A31D89161D5B440065EB6B /* icon.icns */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHDifficultyChooser.xib; sourceTree = "<group>"; };
 		F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHCellRenderingOptions.h; sourceTree = "<group>"; };
 		F0A1881B1612F1A700565224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0A31D7E161D1F240065EB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 				F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */,
 				F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */,
 				F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */,
+				F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				F0B402B61611908600CB7FB5 /* SHDocument.xib in Resources */,
 				F0B402B91611908600CB7FB5 /* MainMenu.xib in Resources */,
 				F0A31D8A161D5B440065EB6B /* icon.icns in Resources */,
+				F06E9AAC1622CAC8007EA2A4 /* SHDifficultyChooser.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

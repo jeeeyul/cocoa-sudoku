@@ -42,7 +42,7 @@
 				<int key="NSvFlags">256</int>
 				<string key="NSFrameSize">{300, 446}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSClassName">NSView</string>
 			</object>
 			<object class="NSDrawer" id="999102745">
@@ -226,7 +226,7 @@
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{192, 192}, {16, 16}}</string>
 									<reference key="NSSuperview" ref="866278681"/>
-									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<string key="NSReuseIdentifierKey">_NS:945</string>
 									<int key="NSpiFlags">28938</int>
 									<double key="NSMaxValue">100</double>
@@ -234,7 +234,7 @@
 							</array>
 							<string key="NSFrameSize">{400, 400}</string>
 							<reference key="NSSuperview" ref="568628114"/>
-							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="924293910"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">SHSudokuView</string>
@@ -242,7 +242,6 @@
 					</array>
 					<string key="NSFrameSize">{400, 400}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="866278681"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
@@ -614,7 +613,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">100101</int>
+			<int key="maxID">100116</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -634,44 +633,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">NSLayoutConstraint</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SHDocument</string>
-					<string key="superclassName">NSPersistentDocument</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="indicator">NSProgressIndicator</string>
-						<string key="sudokuView">SHSudokuView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="indicator">
-							<string key="name">indicator</string>
-							<string key="candidateClassName">NSProgressIndicator</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="sudokuView">
-							<string key="name">sudokuView</string>
-							<string key="candidateClassName">SHSudokuView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SHDocument.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">SHSudokuView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/SHSudokuView.h</string>
 					</object>
 				</object>
 			</array>

@@ -42,11 +42,11 @@
     
     
     if(options.selected){
-        [[NSColor colorWithCalibratedHue:0.5 saturation:0.5 brightness:0.8 alpha:1]set];
+        [[NSColor colorWithCalibratedHue:0.6 saturation:0.5 brightness:0.3 alpha:1]set];
     }
     
     else if(options.highlighted){
-        [[NSColor colorWithCalibratedHue:0.5 saturation:0.5 brightness:0.8 alpha:0.5]set];
+        [[NSColor colorWithCalibratedHue:0.6 saturation:0.8 brightness:0.3 alpha:0.3]set];
     }
     
     else{
@@ -98,17 +98,26 @@
     NSGraphicsContext* gc = [NSGraphicsContext currentContext];
     
     [gc saveGraphicsState];
-    NSShadow* shadow = [NSShadow new];
-    shadow.shadowOffset = NSMakeSize(0.0, -1.0);
-    shadow.shadowColor = [NSColor whiteColor];
-    [shadow set];
+    
+    NSMutableDictionary* drawOption = [NSMutableDictionary new];
+    
+    if(options.selected)
+    {
+        [drawOption setValue:[NSColor whiteColor] forKey:NSForegroundColorAttributeName];
+    }
+    else{
+        NSShadow* shadow = [NSShadow new];
+        shadow.shadowOffset = NSMakeSize(0.0, -1.0);
+        shadow.shadowColor = [NSColor whiteColor];
+        [shadow set];
+    }
     
     if(self.model != nil && self.model.value != nil){
         NSString* text = [NSString stringWithFormat: @"%@", self.model.value];
         NSRect textBounds = [text boundingRectWithSize:self.bounds.size options:0 attributes:nil];
-        
+    
         [text drawAtPoint:NSMakePoint(self.bounds.origin.x + (self.bounds.size.width - textBounds.size.width)/2.0, self.bounds.origin.y + (self.bounds.size.height - textBounds.size.height) /2.0)
-           withAttributes:nil];
+           withAttributes:drawOption];
     }
     [gc restoreGraphicsState];
 
