@@ -7,16 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "SHSudokuView.h"
-#import "SHDifficultyChooser.h"
+@class SHGameController;
 
 @interface SHDocument : NSPersistentDocument
 
-@property SHGame* game;
-@property IBOutlet SHSudokuView* sudokuView;
-@property IBOutlet SHDifficultyChooser* difficultyChooser;
-@property IBOutlet NSProgressIndicator* indicator;
-@property IBOutlet NSWindow* gameWindow;
-
+@property IBOutlet SHGameController* gameController;
 
 @end

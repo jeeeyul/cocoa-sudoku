@@ -26,7 +26,7 @@
 
     -(void)applicationDidFinishLaunching:(NSNotification *)notification
     {
-        NSLog(@"App Dele - 런칭 피니시");
+        [self log:@"실행 됨"];
      
         // 리스토어된 도큐먼트 또는 로드된 도큐먼트가 없을 경우, 새 게임을 열도록 예약.
         NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(openNewDocumentIfNeeded) object:nil];
@@ -35,9 +35,7 @@
 
     -(void)openNewDocumentIfNeeded
     {
-        NSLog(@"App Dele - 확보된 도큐먼트 확인 시작");
         NSUInteger documentCount = [[[NSDocumentController sharedDocumentController] documents]count];
-        NSLog(@"App Dele - %ld개의 도큐먼트", documentCount);
         
         if(documentCount == 0){
             [self newGame: self];
@@ -47,14 +45,13 @@
 
 -(void)application:(NSApplication *)app didDecodeRestorableState:(NSCoder *)coder
 {
-    NSLog(@"App Dele - 리스토어");
     fRestored = YES;
 }
 
 -(void)newGame:(id)sender
 {
     [[NSDocumentController sharedDocumentController]openUntitledDocumentAndDisplay:YES error: nil];
-    NSLog(@"App Dele - 새 도큐먼트 작성");
+    [self log:@"새 도큐먼트 작성함"];
 }
 
 -(void)application:(NSApplication *)app willEncodeRestorableState:(NSCoder *)coder
@@ -66,6 +63,15 @@
 {
     SHDocument* doc = [[NSDocumentController sharedDocumentController] currentDocument];
     [doc duplicateDocument: doc];
+}
+
+-(void) log:(NSString*) obj, ...
+{
+    va_list args;
+    va_start(args, obj);
+    NSString* str = [[NSString alloc]initWithFormat:obj arguments:args];
+    NSLog(@"SHAppDelegate - %@", str);
+    va_end(args);
 }
 
 @end

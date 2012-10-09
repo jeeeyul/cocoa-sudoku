@@ -31,6 +31,7 @@
 		F0B402E916119A0D00CB7FB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402AB1611908600CB7FB5 /* main.m */; };
 		F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */; };
 		F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */; };
+		F0FC3859162473C300DED6FB /* SHGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FC3858162473C300DED6FB /* SHGameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCell.m; sourceTree = "<group>"; };
 		F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCellItem.h; sourceTree = "<group>"; };
 		F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCellItem.m; sourceTree = "<group>"; };
+		F0FC3857162473C300DED6FB /* SHGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGameController.h; sourceTree = "<group>"; };
+		F0FC3858162473C300DED6FB /* SHGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 				F08667671624113D00D60FB7 /* SHDifficultyChooser.h */,
 				F08667681624113D00D60FB7 /* SHDifficultyChooser.m */,
 				F08667691624113D00D60FB7 /* SHDifficultyChooser.xib */,
+				F0FC3857162473C300DED6FB /* SHGameController.h */,
+				F0FC3858162473C300DED6FB /* SHGameController.m */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */,
 				F086676A1624113D00D60FB7 /* SHDifficultyChooser.m in Sources */,
 				F086676E1624172900D60FB7 /* SHGame.m in Sources */,
+				F0FC3859162473C300DED6FB /* SHGameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
