@@ -12,6 +12,7 @@
 
 @interface SHDocument : NSPersistentDocument
 
+@property SHGame* game;
 @property IBOutlet SHSudokuView* sudokuView;
 @property IBOutlet SHDifficultyChooser* difficultyChooser;
 @property IBOutlet NSProgressIndicator* indicator;

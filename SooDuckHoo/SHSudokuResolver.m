@@ -16,7 +16,6 @@
     NSArray* fEmptyArray;
     NSArray* fAllNumbers;
     
-    
     int* fPuzzle;
     int fIndex;
     bool* fFixed;

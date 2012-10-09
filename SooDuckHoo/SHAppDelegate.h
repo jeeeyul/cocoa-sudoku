@@ -13,5 +13,6 @@
 @property IBOutlet NSApplication* app;
 
 -(IBAction)newGame:(id)sender;
+-(IBAction)duplicateGame:(id)sender;
 
 @end

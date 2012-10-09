@@ -17,7 +17,7 @@
 @synthesize sudokuView = _sudokuView;
 @synthesize gameWindow = _gameWindow;
 @synthesize difficultyChooser = _difficultyChooser;
-
+@synthesize game = _game;
 - (id)init
 {
     self = [super init];
@@ -60,31 +60,26 @@
     
     [self.indicator startAnimation: self];
     NSLog(@"SHDoc - 닙 로드 완료");
-    SHGame* game = [self ensureGame];
+    self.game = [self ensureGame];
     NSLog(@"SHDoc - 게임 확보후 지정");
     
     /*
      * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
      */
     NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self
-                                                                    selector:@selector(sendGameToView:)
-                                                                      object:game];
+                                                                    selector:@selector(sendGameToView)
+                                                                      object:nil];
     [[NSOperationQueue mainQueue]addOperation: op];
-    
-
-    
-
-
     [CATransaction commit];
 }
 
--(void) sendGameToView: (SHGame*) game
+-(void) sendGameToView
 {
-    if(game.initialized.boolValue == NO){
-        [self showDifficultySheet: game];
+    if(self.game.initialized.boolValue == NO){
+        [self showDifficultySheet];
     }
     
-    self.sudokuView.game = game;
+    self.sudokuView.game = self.game;
     [self.indicator stopAnimation: self];
 }
 
@@ -142,7 +137,7 @@
     return game;
 }
 
--(void)showDifficultySheet:(SHGame*) game
+-(void)showDifficultySheet
 {
     [NSApp beginSheet:self.difficultyChooser.window
        modalForWindow:self.gameWindow
@@ -167,12 +162,12 @@
     for(int i=0; i<_difficultyChooser.difficulty * 22; i++){
         int targetIndex = rand() % [array count];
         NSNumber* target = [array objectAtIndex:targetIndex];
-        SHSudokuCell* cell = [game.cells objectAtIndex:[target intValue]];
+        SHSudokuCell* cell = [self.game.cells objectAtIndex:[target intValue]];
         cell.value = 0;
         [array removeObjectAtIndex: targetIndex];
     }
     
-    game.initialized = [NSNumber numberWithBool: YES];
+    self.game.initialized = [NSNumber numberWithBool: YES];
     
     [[self managedObjectContext]processPendingChanges];
     [[self undoManager]enableUndoRegistration];

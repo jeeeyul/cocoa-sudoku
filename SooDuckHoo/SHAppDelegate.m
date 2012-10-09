@@ -7,6 +7,7 @@
 //
 
 #import "SHAppDelegate.h"
+#import "SHDocument.h"
 
 @implementation SHAppDelegate
 {
@@ -18,6 +19,7 @@
     self = [super init];
     if (self) {
         fRestored = NO;
+        srand((int)clock());
     }
     return self;
 }
@@ -58,6 +60,12 @@
 -(void)application:(NSApplication *)app willEncodeRestorableState:(NSCoder *)coder
 {
     NSLog(@"store");
+}
+
+-(void)duplicateGame: (id) sender
+{
+    SHDocument* doc = [[NSDocumentController sharedDocumentController] currentDocument];
+    [doc duplicateDocument: doc];
 }
 
 @end
