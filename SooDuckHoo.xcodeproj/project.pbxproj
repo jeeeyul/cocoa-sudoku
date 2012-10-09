@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F06E9AAC1622CAC8007EA2A4 /* SHDifficultyChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */; };
+		F086676316240C6D00D60FB7 /* simpson.png in Resources */ = {isa = PBXBuildFile; fileRef = F086676216240C6D00D60FB7 /* simpson.png */; };
+		F086676A1624113D00D60FB7 /* SHDifficultyChooser.m in Sources */ = {isa = PBXBuildFile; fileRef = F08667681624113D00D60FB7 /* SHDifficultyChooser.m */; };
+		F086676B1624113D00D60FB7 /* SHDifficultyChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = F08667691624113D00D60FB7 /* SHDifficultyChooser.xib */; };
+		F086676E1624172900D60FB7 /* SHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F086676D1624172900D60FB7 /* SHGame.m */; };
+		F086677016241AEE00D60FB7 /* sheldon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F086676F16241AEE00D60FB7 /* sheldon.jpg */; };
+		F086677216241B4100D60FB7 /* jeeeyul.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F086677116241B4100D60FB7 /* jeeeyul.jpg */; };
 		F0A1881C1612F1A700565224 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A1881B1612F1A700565224 /* CoreGraphics.framework */; };
 		F0A31D7F161D1F240065EB6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A31D7E161D1F240065EB6B /* QuartzCore.framework */; };
 		F0A31D8A161D5B440065EB6B /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = F0A31D89161D5B440065EB6B /* icon.icns */; };
@@ -24,13 +29,19 @@
 		F0B402E616119A0D00CB7FB5 /* NSMutableArray_Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402C5161190E200CB7FB5 /* NSMutableArray_Shuffle.m */; };
 		F0B402E816119A0D00CB7FB5 /* SHDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402B21611908600CB7FB5 /* SHDocument.m */; };
 		F0B402E916119A0D00CB7FB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402AB1611908600CB7FB5 /* main.m */; };
-		F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F516119C0200CB7FB5 /* SHGame.m */; };
 		F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */; };
 		F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHDifficultyChooser.xib; sourceTree = "<group>"; };
+		F086676216240C6D00D60FB7 /* simpson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpson.png; sourceTree = "<group>"; };
+		F08667671624113D00D60FB7 /* SHDifficultyChooser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHDifficultyChooser.h; sourceTree = "<group>"; };
+		F08667681624113D00D60FB7 /* SHDifficultyChooser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHDifficultyChooser.m; sourceTree = "<group>"; };
+		F08667691624113D00D60FB7 /* SHDifficultyChooser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SHDifficultyChooser.xib; sourceTree = "<group>"; };
+		F086676C1624172900D60FB7 /* SHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGame.h; sourceTree = "<group>"; };
+		F086676D1624172900D60FB7 /* SHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGame.m; sourceTree = "<group>"; };
+		F086676F16241AEE00D60FB7 /* sheldon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sheldon.jpg; sourceTree = "<group>"; };
+		F086677116241B4100D60FB7 /* jeeeyul.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jeeeyul.jpg; sourceTree = "<group>"; };
 		F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHCellRenderingOptions.h; sourceTree = "<group>"; };
 		F0A1881B1612F1A700565224 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		F0A31D7E161D1F240065EB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -60,8 +71,6 @@
 		F0B402C9161190F100CB7FB5 /* SHSearchSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHSearchSequence.m; sourceTree = "<group>"; };
 		F0B402D91611936600CB7FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SHDocument.xib; sourceTree = "<group>"; };
 		F0B402DA1611936600CB7FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F0B402F416119C0200CB7FB5 /* SHGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHGame.h; sourceTree = "<group>"; };
-		F0B402F516119C0200CB7FB5 /* SHGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHGame.m; sourceTree = "<group>"; };
 		F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCell.h; sourceTree = "<group>"; };
 		F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHSudokuCell.m; sourceTree = "<group>"; };
 		F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSudokuCellItem.h; sourceTree = "<group>"; };
@@ -82,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F086676116240C5500D60FB7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F086677116241B4100D60FB7 /* jeeeyul.jpg */,
+				F086676F16241AEE00D60FB7 /* sheldon.jpg */,
+				F086676216240C6D00D60FB7 /* simpson.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		F0B402901611908500CB7FB5 = {
 			isa = PBXGroup;
 			children = (
@@ -124,11 +143,11 @@
 		F0B402A51611908500CB7FB5 /* SooDuckHoo */ = {
 			isa = PBXGroup;
 			children = (
+				F086676116240C5500D60FB7 /* images */,
 				F0B402ED16119B1A00CB7FB5 /* logic */,
 				F0B402EC16119AFD00CB7FB5 /* ui */,
 				F0B402EB16119AEB00CB7FB5 /* extensions */,
 				F0B402D01611918C00CB7FB5 /* model */,
-				F0B402B41611908600CB7FB5 /* SHDocument.xib */,
 				F0B402B71611908600CB7FB5 /* MainMenu.xib */,
 				F0B402A61611908600CB7FB5 /* Supporting Files */,
 				F0A882AB1611A437005EB951 /* SHAppDelegate.h */,
@@ -153,10 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				F0B402BA1611908600CB7FB5 /* SHDocument.xcdatamodeld */,
+				F086676C1624172900D60FB7 /* SHGame.h */,
+				F086676D1624172900D60FB7 /* SHGame.m */,
 				F0B402F716119C0200CB7FB5 /* SHSudokuCell.h */,
 				F0B402F816119C0200CB7FB5 /* SHSudokuCell.m */,
-				F0B402F416119C0200CB7FB5 /* SHGame.h */,
-				F0B402F516119C0200CB7FB5 /* SHGame.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -173,6 +192,7 @@
 		F0B402EC16119AFD00CB7FB5 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				F0B402B41611908600CB7FB5 /* SHDocument.xib */,
 				F0B402B11611908600CB7FB5 /* SHDocument.h */,
 				F0B402B21611908600CB7FB5 /* SHDocument.m */,
 				F0B402C2161190E200CB7FB5 /* SHSudokuView.h */,
@@ -180,7 +200,9 @@
 				F0F2A8A01612A67000781252 /* SHSudokuCellItem.h */,
 				F0F2A8A11612A67000781252 /* SHSudokuCellItem.m */,
 				F088C4E31613FA04000E458C /* SHCellRenderingOptions.h */,
-				F06E9AAB1622CAC8007EA2A4 /* SHDifficultyChooser.xib */,
+				F08667671624113D00D60FB7 /* SHDifficultyChooser.h */,
+				F08667681624113D00D60FB7 /* SHDifficultyChooser.m */,
+				F08667691624113D00D60FB7 /* SHDifficultyChooser.xib */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -254,7 +276,10 @@
 				F0B402B61611908600CB7FB5 /* SHDocument.xib in Resources */,
 				F0B402B91611908600CB7FB5 /* MainMenu.xib in Resources */,
 				F0A31D8A161D5B440065EB6B /* icon.icns in Resources */,
-				F06E9AAC1622CAC8007EA2A4 /* SHDifficultyChooser.xib in Resources */,
+				F086676316240C6D00D60FB7 /* simpson.png in Resources */,
+				F086676B1624113D00D60FB7 /* SHDifficultyChooser.xib in Resources */,
+				F086677016241AEE00D60FB7 /* sheldon.jpg in Resources */,
+				F086677216241B4100D60FB7 /* jeeeyul.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +297,11 @@
 				F0B402E616119A0D00CB7FB5 /* NSMutableArray_Shuffle.m in Sources */,
 				F0B402E816119A0D00CB7FB5 /* SHDocument.m in Sources */,
 				F0B402E916119A0D00CB7FB5 /* main.m in Sources */,
-				F0B402F616119C0200CB7FB5 /* SHGame.m in Sources */,
 				F0B402F916119C0200CB7FB5 /* SHSudokuCell.m in Sources */,
 				F0A882AD1611A437005EB951 /* SHAppDelegate.m in Sources */,
 				F0F2A8A21612A67000781252 /* SHSudokuCellItem.m in Sources */,
+				F086676A1624113D00D60FB7 /* SHDifficultyChooser.m in Sources */,
+				F086676E1624172900D60FB7 /* SHGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

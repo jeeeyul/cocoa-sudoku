@@ -12,9 +12,11 @@
 #import "SHSudokuResolver.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @implementation SHDocument
 @synthesize sudokuView = _sudokuView;
-@synthesize difficultyWindow = _difficultyWindow;
+@synthesize gameWindow = _gameWindow;
+@synthesize difficultyChooser = _difficultyChooser;
 
 - (id)init
 {
@@ -64,26 +66,32 @@
     /*
      * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
      */
-    NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self.sudokuView selector:@selector(setGame:) object:game];
+    NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self
+                                                                    selector:@selector(sendGameToView:)
+                                                                      object:game];
     [[NSOperationQueue mainQueue]addOperation: op];
     
-    [self.indicator stopAnimation: self];
+
     
 
 
     [CATransaction commit];
 }
 
+-(void) sendGameToView: (SHGame*) game
+{
+    if(game.initialized.boolValue == NO){
+        [self showDifficultySheet: game];
+    }
+    
+    self.sudokuView.game = game;
+    [self.indicator stopAnimation: self];
+}
+
 -(void) modelChanged: (NSNotification*) noti
 {
     self.sudokuView.needsDisplay = YES;
 }
-
-+ (BOOL)autosavesInPlace
-{
-    return YES;
-}
-
 
 /*
  * 문서에 게임이 포함된 경우, 게임을 로드하고 그렇지 않은 경우 새로 만들고, 문서에 포함시킨 뒤 리턴한다.
@@ -134,14 +142,41 @@
     return game;
 }
 
--(void)showDifficultySheet
+-(void)showDifficultySheet:(SHGame*) game
 {
-    if(_difficultyWindow == nil){
-        [NSBundle loadNibNamed:@"SHDifficultyChooser.xib" owner:self];
-        // 닙로드
+    [NSApp beginSheet:self.difficultyChooser.window
+       modalForWindow:self.gameWindow
+        modalDelegate:nil
+       didEndSelector:nil
+          contextInfo:nil];
+    
+    [NSApp runModalForWindow: _difficultyChooser.window];
+    [NSApp endSheet:_difficultyChooser.window];
+
+    [_difficultyChooser.window orderOut:self];
+    
+    [[self managedObjectContext] processPendingChanges];
+    [[self undoManager]disableUndoRegistration];
+    
+    
+    NSMutableArray* array = [NSMutableArray new];
+    for(int i=0; i<81; i++){
+        [array addObject: [NSNumber numberWithInt: i ]];
     }
     
-    //시트 보여주기
+    for(int i=0; i<_difficultyChooser.difficulty * 22; i++){
+        int targetIndex = rand() % [array count];
+        NSNumber* target = [array objectAtIndex:targetIndex];
+        SHSudokuCell* cell = [game.cells objectAtIndex:[target intValue]];
+        cell.value = 0;
+        [array removeObjectAtIndex: targetIndex];
+    }
+    
+    game.initialized = [NSNumber numberWithBool: YES];
+    
+    [[self managedObjectContext]processPendingChanges];
+    [[self undoManager]enableUndoRegistration];
 }
+
 
 @end

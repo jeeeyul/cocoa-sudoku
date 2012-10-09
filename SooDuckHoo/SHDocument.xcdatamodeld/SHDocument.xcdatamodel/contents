@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1810" systemVersion="12C54" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Game" representedClassName="SHGame" syncable="YES">
+        <attribute name="initialized" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="cells" optional="YES" toMany="YES" minCount="81" maxCount="81" deletionRule="Cascade" ordered="YES" destinationEntity="SudokuCell" inverseName="game" inverseEntity="SudokuCell" syncable="YES"/>
     </entity>
     <entity name="SudokuCell" representedClassName="SHSudokuCell" syncable="YES">
@@ -11,7 +12,7 @@
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Game" inverseName="cells" inverseEntity="Game" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Game" positionX="160" positionY="192" width="128" height="68"/>
+        <element name="Game" positionX="160" positionY="192" width="128" height="73"/>
         <element name="SudokuCell" positionX="-279" positionY="313" width="128" height="128"/>
     </elements>
 </model>
