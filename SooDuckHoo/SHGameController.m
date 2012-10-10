@@ -52,21 +52,23 @@
  */
 -(void) prepareGame
 {
-    [CATransaction begin];
-    [CATransaction setDisableActions: YES];
-    
-    [self.indicator startAnimation: self];
-
-    self.game = [self ensureGame];
-    
-    /*
-     * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
-     */
-    NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self
-                                                                    selector:@selector(sendGameToView)
-                                                                      object:nil];
-    [[NSOperationQueue mainQueue]addOperation: op];
-    [CATransaction commit];
+    @autoreleasepool {
+        [CATransaction begin];
+        [CATransaction setDisableActions: YES];
+        
+        [self.indicator startAnimation: self];
+        
+        self.game = [self ensureGame];
+        
+        /*
+         * UI 스레드 내에서 뷰에 생성된 게임을 전달한다.
+         */
+        NSInvocationOperation* op = [[NSInvocationOperation alloc]initWithTarget:self
+                                                                        selector:@selector(sendGameToView)
+                                                                          object:nil];
+        [[NSOperationQueue mainQueue]addOperation: op];
+        [CATransaction commit];
+    }
 }
 
 -(void) sendGameToView
